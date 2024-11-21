@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_initial_tasks
+      author: Gleb
+      changes:
+        - insert:
+            tableName: task
+            columns:
+              - column:
+                  name: title
+                  value: "Задача 5"
+              - column:
+                  name: description
+                  value: "Описание задачи 5"
+              - column:
+                  name: status
+                  value: "PENDING"
+              - column:
+                  name: priority
+                  value: "HIGH"
+              - column:
+                  name: author_email
+                  value: "author3@example.com"
+              - column:
+                  name: created_at
+                  valueDate: "2024-01-05T12:00:00"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-01-05T12:00:00"

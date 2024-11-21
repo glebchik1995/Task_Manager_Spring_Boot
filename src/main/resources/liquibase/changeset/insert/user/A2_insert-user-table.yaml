@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_users_data_1
+      author: Gleb
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: name
+                  value: 'Anna'
+              - column:
+                  name: username
+                  value: 'anna97@gmail.com'
+              - column:
+                  name: password
+                  value: '$2a$12$x9Rhx2BKVeNd/iV0tpm1AOwFVhm835KvYILXSu5UHT19qMkbG3MSS'
+              - column:
+                  name: role
+                  value: 'USER'

@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: add_comment_table
+      author: Gleb
+      changes:
+        - createTable:
+            tableName: comment
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: text
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: assignee_email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: task_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+                constraints:
+              - foreignKeyConstraint:
+                  foreignKeyName: fk_comment_task
+                  baseTableName: comment
+                  baseColumnNames: task_id
+                  referencedTableName: task
+                  referencedColumnNames: id
+                  onDelete: CASCADE

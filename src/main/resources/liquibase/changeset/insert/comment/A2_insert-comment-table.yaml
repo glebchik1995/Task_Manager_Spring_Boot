@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_initial_comments
+      author: Gleb
+      changes:
+        - insert:
+            tableName: comment
+            columns:
+              - column:
+                  name: text
+                  value: "Комментарий 2 к задаче 1"
+              - column:
+                  name: assignee_email
+                  value: "assignee1@example.com"
+              - column:
+                  name: created_at
+                  valueDate: "2024-01-01T10:06:00"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-01-01T10:06:00"
+              - column:
+                  name: task_id
+                  valueNumeric: 1
